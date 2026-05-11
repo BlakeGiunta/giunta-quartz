@@ -26,6 +26,8 @@ jobs:
           node-version: 22
       - name: Install Dependencies
         run: npm ci
+      - name: Ensure homepage exists
+        run: node scripts/ensure-homepage.mjs
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact
